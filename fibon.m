@@ -6,8 +6,12 @@ elseif x == 1
     f_x = 1;
     fprintf('The Fibonacci number is: %d\n',f_x)
 else
+    a = 0;
+    b = 1;
     for i = 2:x
-        f_x = (x-1)+(x-2);
+        f_x = a + b;
+        a = b;
+        b = f_x;
     end
     fprintf('The Fibonacci number is: %d\n',f_x)
 end
