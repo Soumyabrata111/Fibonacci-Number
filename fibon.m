@@ -1,18 +1,14 @@
-function fibon(x)
-if x == 0
-    f_x = 0;
-    fprintf('The Fibonacci number is: %d\n',f_x)
-elseif x == 1
-    f_x = 1;
-    fprintf('The Fibonacci number is: %d\n',f_x)
-else
-    a = 0;
-    b = 1;
-    for i = 2:x
-        f_x = a + b;
-        a = b;
-        b = f_x;
-    end
-    fprintf('The Fibonacci number is: %d\n',f_x)
-end
+F(10) % Function call to generate 10th Fibonacci number
 
+%  Function to generate n-th Fibonacci number
+function result = F(n)
+    fi = zeros(1, n+1);
+    fi(1) = 0;
+    fi(2) = 1;
+
+    for i = 3:n+1
+        fi(i) = fi(i-1) + fi(i-2);
+    end
+
+    result = fi(n+1);
+end
